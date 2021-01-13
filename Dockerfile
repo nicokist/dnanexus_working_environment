@@ -1,15 +1,17 @@
-FROM ubuntu:focal
-RUN apt-get update
-RUN apt-get install -y tmux python3 python3-pip
-RUN pip3 install fasttext
-RUN addgroup --gid 1000 ubuntu 
-RUN useradd -u 1000 -g 1000 -s /bin/bash ubuntu
-RUN adduser ubuntu sudo
-RUN apt-get install -y sudo
-RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+FROM rocker/tidyverse
+RUN apt update
+RUN apt install -y libv8-dev libigraph-dev vim
+# start R block
+RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr'))" | R
+RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" | R
+RUN echo "install.packages('BiocManager')"|R
+RUN echo "cmdstanr::install_cmdstan()" | sudo -u rstudio R
+RUN echo "BiocManager::install(c('limma', 'proDA'))"|R
+RUN mkdir /home/rstudio/.r/
+RUN echo "CXX14FLAGS=-O3 -march=native -mtune=native -fPIC\
+    CXX14=g++" > /home/rstudio/.r/Makevars
 
-RUN apt-get install -y neovim
-RUN apt-get install -y wget git unzip
-RUN mkdir /home/ubuntu
-WORKDIR /home/ubuntu
-COPY homedir/* /home/ubuntu/
+
+## end R Block
+
+COPY homedir/* /home/rstudio/
