@@ -1,6 +1,6 @@
 This is a docker image with a few helpful features for statistical and ML work. I use it on dnanexus machines.
 
-Usage:
+Usage: 
 git clone this repository
 ```
 docker build docker_working_environment -t stan_docker
