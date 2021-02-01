@@ -5,6 +5,7 @@ RUN apt install -y libv8-dev libigraph-dev vim
 RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr'))" | R
 RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" | R
 RUN echo "install.packages('BiocManager')"|R
+RUN adduser rstudio sudo
 RUN echo "cmdstanr::install_cmdstan()" | sudo -u rstudio R
 RUN echo "BiocManager::install(c('limma', 'proDA'))"|R
 RUN mkdir /home/rstudio/.r/
