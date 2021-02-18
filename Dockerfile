@@ -7,7 +7,7 @@ RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages
 RUN echo "install.packages('BiocManager')"|R
 RUN adduser rstudio sudo
 RUN echo "cmdstanr::install_cmdstan()" | sudo -u rstudio R
-RUN echo "BiocManager::install(c('limma', 'proDA'))"|R
+RUN echo "BiocManager::install(c('limma', 'proDA','sva'))"|R
 RUN mkdir /home/rstudio/.r/
 RUN echo "CXX14FLAGS=-O3 -march=native -mtune=native -fPIC\
     CXX14=g++" > /home/rstudio/.r/Makevars
