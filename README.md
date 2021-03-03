@@ -3,6 +3,7 @@ This is a docker image with a few helpful features for statistical and ML work. 
 Usage: 
 git clone this repository
 ```
+# sudo chown dnanexus /var/run/docker.sock ## Only if you're on a dnanexus host.
 docker build docker_working_environment -t stan_docker
 docker run --user rstudio -v `pwd`:/home/rstudio/host -it stan_docker bash
 ```
