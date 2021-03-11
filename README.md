@@ -10,6 +10,15 @@ The my_cwick applet needs to be present in the project you're working on. Either
 git clone https://github.com/dnanexus/cwic.git
 dx build -f -d my_cwick
 ```
+## Mounting other projects
+
+```
+mkdir /mnt/project2
+dxfuse-mount /mnt/project2/ DNANEXUS_PROJECT_NAME
+ls /mnt/project2
+```
+
+
 
 
 ## For development
