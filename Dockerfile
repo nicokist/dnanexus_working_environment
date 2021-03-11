@@ -66,14 +66,14 @@ RUN apt install -y libv8-dev libigraph-dev vim
 RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr'))" | R
 RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" | R
 RUN echo "install.packages('BiocManager')"|R
-RUN adduser rstudio sudo
-RUN echo "cmdstanr::install_cmdstan()" | sudo -u rstudio R
+RUN adduser cwic sudo
+RUN echo "cmdstanr::install_cmdstan()" | sudo -u cwic R
 RUN echo "BiocManager::install(c('limma', 'proDA','sva'))"|R
-RUN mkdir /home/rstudio/.r/
+RUN mkdir /home/cwic/.r/
 RUN echo "CXX14FLAGS=-O3 -march=native -mtune=native -fPIC\
-    CXX14=g++" > /home/rstudio/.r/Makevars
+    CXX14=g++" > /home/cwic/.r/Makevars
 
 
 ## end R Block
 
-COPY homedir/* /home/rstudio/
+COPY homedir/* /home/cwic/
