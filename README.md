@@ -1,7 +1,7 @@
 This is a docker image with a few helpful features (R, tidyverse, stan, bioconductor) for statistical and ML work, I use it on dnanexus machines.
 
 Usage: 
-`dx run my_cwick --ssh -i "image=nicokist/dnanexus_working_environment"`
+`dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment"`
 
 Note that it may take some time (~5 min) to download the docker image, during this time the message "Waiting for the cwic container to start.." will be shown.
 
