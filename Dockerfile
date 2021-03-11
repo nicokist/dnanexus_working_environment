@@ -43,12 +43,12 @@ RUN wget https://github.com/dnanexus/dxfuse/releases/download/v0.23.2/dxfuse-lin
     && mv /usr/local/bin/dxfuse-linux /usr/local/bin/dxfuse \
     && chmod +x /usr/local/bin/dxfuse
 
-RUN mkdir -p /project /scratch /home/dnanexus /home/cwic
+RUN mkdir -p /project /scratch /home/dnanexus /home/rstudio
 
 CMD ["/bin/bash"]
 
-WORKDIR /home/cwic
-ENV HOME=/home/cwic
+WORKDIR /home/rstudio
+ENV HOME=/home/rstudio
 
 # Set cwic prompt
 RUN echo 'PS1="\001$(tput setaf 3)\002\001$(tput bold)\002root@cwic:\\w# \001$(tput sgr0)\002"' >> /etc/bash.bashrc
@@ -57,7 +57,7 @@ RUN echo 'PS1="\001$(tput setaf 3)\002\001$(tput bold)\002root@cwic:\\w# \001$(t
 # functions for proper formatting), if COLUMNS and LINES variables are passed
 RUN echo 'if [[ -n $COLUMNS ]]; then stty columns $COLUMNS; fi; if [[ -n $LINES ]]; then stty rows $LINES; fi' >> /etc/bash.bashrc
 
-### END CWICK STUFF
+### END CWIC STUFF
 ## Install R dependencies.
 
 RUN apt update
@@ -66,14 +66,14 @@ RUN apt install -y libv8-dev libigraph-dev vim
 RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr'))" | R
 RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" | R
 RUN echo "install.packages('BiocManager')"|R
-RUN adduser cwic sudo
-RUN echo "cmdstanr::install_cmdstan()" | sudo -u cwic R
+RUN adduser rstudio sudo
+RUN echo "cmdstanr::install_cmdstan()" | sudo -u rstudio R
 RUN echo "BiocManager::install(c('limma', 'proDA','sva'))"|R
-RUN mkdir /home/cwic/.r/
+RUN mkdir /home/rstudio/.r/
 RUN echo "CXX14FLAGS=-O3 -march=native -mtune=native -fPIC\
-    CXX14=g++" > /home/cwic/.r/Makevars
+    CXX14=g++" > /home/rstudio/.r/Makevars
 
 
 ## end R Block
 
-COPY homedir/* /home/cwic/
+COPY homedir/* /home/rstudio/
