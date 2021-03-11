@@ -1,3 +1,5 @@
+[![Publish Docker image](https://github.com/nicokist/dnanexus_working_environment/actions/workflows/docker-image.yml/badge.svg)](https://github.com/nicokist/dnanexus_working_environment/actions/workflows/docker-image.yml)
+
 This is a docker image with a few helpful features (R, tidyverse, stan, bioconductor) for statistical and ML work, I use it on dnanexus machines.
 
 Usage: 
