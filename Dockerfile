@@ -43,12 +43,12 @@ RUN wget https://github.com/dnanexus/dxfuse/releases/download/v0.23.2/dxfuse-lin
     && mv /usr/local/bin/dxfuse-linux /usr/local/bin/dxfuse \
     && chmod +x /usr/local/bin/dxfuse
 
-RUN mkdir -p /project /scratch /home/dnanexus /home/rstudio
+RUN mkdir -p /project /scratch /home/dnanexus /home/cwic
 
 CMD ["/bin/bash"]
 
-WORKDIR /home/rstudio
-ENV HOME=/home/rstudio
+WORKDIR /home/cwic
+ENV HOME=/home/cwic
 
 # Set cwic prompt
 RUN echo 'PS1="\001$(tput setaf 3)\002\001$(tput bold)\002root@cwic:\\w# \001$(tput sgr0)\002"' >> /etc/bash.bashrc
