@@ -1,6 +1,16 @@
-This is a docker image with a few helpful features for statistical and ML work. I use it on dnanexus machines.
+This is a docker image with a few helpful features for statistical and ML work, I use it on dnanexus machines.
 
 Usage: 
+`dx run my_cwick --ssh`
+select ` [0] Docker image name (image)`
+enter nicokist/dnanexus_working_environment
+
+
+
+
+
+## For development
+
 git clone this repository
 ```
 # sudo chown dnanexus /var/run/docker.sock ## Only if you're on a dnanexus host.
