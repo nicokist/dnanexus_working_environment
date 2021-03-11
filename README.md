@@ -8,6 +8,7 @@ The my_cwick applet needs to be present in the project you're working on. Either
 
 ```
 git clone https://github.com/dnanexus/cwic.git
+cd cwic
 dx build -f -d my_cwick
 ```
 ## Mounting other projects
