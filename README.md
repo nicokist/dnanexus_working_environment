@@ -5,12 +5,12 @@ Usage:
 
 Note that it may take some time (~5 min) to download the docker image from [docker.com](https://hub.docker.com/repository/docker/nicokist/dnanexus_working_environment), during this time the message "Waiting for the cwic container to start.." will be shown.
 
-You may want to run `dx login` to ensure you have the correct credentials within the cwick environment.
+You may want to run `dx login` to ensure you have the correct credentials within the cwic environment.
 
 By default these containers are not persistent.
 
 ## Requirements
-The my_cwick applet needs to be present in the project you're working on. Either copy it over from another project or build it as follows:
+The my_cwic applet needs to be present in the project you're working on. Either copy it over from another project or build it as follows:
 
 ```
 git clone https://github.com/dnanexus/cwic.git
