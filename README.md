@@ -1,8 +1,15 @@
-This is a docker image with a few helpful features for statistical and ML work, I use it on dnanexus machines.
+This is a docker image with a few helpful features (R, tidyverse, stan, bioconductor) for statistical and ML work, I use it on dnanexus machines.
 
 Usage: 
 `dx run my_cwick --ssh -i "image=nicokist/dnanexus_working_environment"`
 
+## Requirements
+The my_cwick applet needs to be present in the project you're working on. Either copy it over from another project or build it as follows:
+
+```
+git clone https://github.com/dnanexus/cwic.git
+dx build -f -d my_cwick
+```
 
 
 ## For development
