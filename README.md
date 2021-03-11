@@ -3,7 +3,7 @@ This is a docker image with a few helpful features (R, tidyverse, stan, biocondu
 Usage: 
 `dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment"`
 
-Note that it may take some time (~5 min) to download the docker image, during this time the message "Waiting for the cwic container to start.." will be shown.
+Note that it may take some time (~5 min) to download the docker image from [docker.com](https://hub.docker.com/repository/docker/nicokist/dnanexus_working_environment), during this time the message "Waiting for the cwic container to start.." will be shown.
 
 You may want to run `dx login` to ensure you have the correct credentials within the cwick environment.
 
