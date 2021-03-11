@@ -5,6 +5,8 @@ Usage:
 
 Note that it may take some time (~5 min) to download the docker image, during this time the message "Waiting for the cwic container to start.." will be shown.
 
+You may want to run `dx login` to ensure you have the correct credentials within the cwick environment.
+
 By default these containers are not persistent.
 
 ## Requirements
@@ -18,6 +20,7 @@ dx build -f -d my_cwick
 ## Mounting other projects
 
 ```
+dx login
 mkdir /mnt/project2
 dxfuse-mount /mnt/project2/ DNANEXUS_PROJECT_NAME
 ls /mnt/project2
