@@ -9,11 +9,15 @@ If you want to use the highly experimental read/write mode:
 
 `dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment" -iproject_mount_options='-w'`
 
+You'll find your project directory mounted as a filesystem on /Project/. Note that there are some large conceptual differences between dnanexus storage blobs (more similar to Amazon S3 and google cloud storage) and filesystems, which are resolved by [dxfuse](https://github.com/dnanexus/dxfuse). Avoid having multiple files with the same name stored in DNANexus, which annoyingly it allows.
+
 Note that it may take some time (~5 min) to download the docker image from [docker.com](https://hub.docker.com/repository/docker/nicokist/dnanexus_working_environment), during this time the message "Waiting for the cwic container to start.." will be shown.
 
 You may want to run `dx login` to ensure you have the correct credentials within the cwic environment.
 
 By default these containers are not persistent.
+
+
 
 ## Requirements
 The my_cwic applet needs to be present in the project you're working on. Either copy it over from another project or build it as follows:
