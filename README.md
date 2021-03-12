@@ -36,7 +36,7 @@ cd cwic
 dx build -f -d my_cwic
 ```
 ## Mounting other projects
-
+(in my testing this didn't work so well when using the read/write mode, but it worked well enough when only reading.)
 ```
 dx login
 mkdir /mnt/project2
