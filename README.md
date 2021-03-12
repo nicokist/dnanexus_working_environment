@@ -5,6 +5,10 @@ This is a docker image with a few helpful features (R, tidyverse, stan, biocondu
 Usage: 
 `dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment"`
 
+If you want to use the highly experimental read/write mode:
+
+`dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment" -iproject_mount_options='-w'`
+
 Note that it may take some time (~5 min) to download the docker image from [docker.com](https://hub.docker.com/repository/docker/nicokist/dnanexus_working_environment), during this time the message "Waiting for the cwic container to start.." will be shown.
 
 You may want to run `dx login` to ensure you have the correct credentials within the cwic environment.
@@ -27,4 +31,3 @@ mkdir /mnt/project2
 dxfuse-mount /mnt/project2/ DNANEXUS_PROJECT_NAME
 ls /mnt/project2
 ```
-
