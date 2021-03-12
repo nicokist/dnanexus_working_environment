@@ -11,6 +11,8 @@ If you want to use the highly experimental read/write mode:
 
 You'll find your project directory mounted as a filesystem on /Project/. Note that there are some large conceptual differences between dnanexus storage blobs (more similar to Amazon S3 and google cloud storage) and filesystems, which are resolved by [dxfuse](https://github.com/dnanexus/dxfuse). Avoid having multiple files with the same name stored in DNANexus, which annoyingly it allows.
 
+If a file does not show up immediately on either the filesystem or platform.dnanexus.com, you may want to run `dxfuse-sync`.
+
 Note that it may take some time (~5 min) to download the docker image from [docker.com](https://hub.docker.com/repository/docker/nicokist/dnanexus_working_environment), during this time the message "Waiting for the cwic container to start.." will be shown.
 
 You may want to run `dx login` to ensure you have the correct credentials within the cwic environment.
