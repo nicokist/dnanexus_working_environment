@@ -9,6 +9,9 @@ If you want to use the highly experimental read/write mode:
 
 `dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment" -iproject_mount_options='-w'`
 
+If you want a particular Azure [instance type](https://documentation.dnanexus.com/developer/api/running-analyses/instance-types):
+`dx run my_cwic --ssh -i "image=nicokist/dnanexus_working_environment" --instance-type azure:mem1_ssd1_x8`
+
 You'll find your project directory mounted as a filesystem on /Project/. Note that there are some large conceptual differences between dnanexus storage blobs (more similar to Amazon S3 and google cloud storage) and filesystems, which are resolved by [dxfuse](https://github.com/dnanexus/dxfuse). Avoid having multiple files with the same name stored in DNANexus, which annoyingly it allows.
 
 If a file does not show up immediately on either the filesystem or platform.dnanexus.com, you may want to run `dxfuse-sync`.
