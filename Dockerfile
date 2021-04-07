@@ -19,6 +19,7 @@ RUN apt-get clean \
         python3-pip \
         vim \
         wget \
+        openssh-client \
     && rm -rf /var/lib/apt/lists/*
 
 # Encoding settings
