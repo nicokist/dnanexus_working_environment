@@ -64,7 +64,7 @@ RUN echo 'if [[ -n $COLUMNS ]]; then stty columns $COLUMNS; fi; if [[ -n $LINES 
 RUN apt update
 RUN apt install -y libv8-dev libigraph-dev vim
 # start R block
-RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr', 'doFuture', 'git2r', 'doRNG', 'caret'))" | R
+RUN echo "install.packages(c('rstan','brms','tidybayes','seqinr', 'doFuture', 'git2r', 'doRNG', 'caret','e1071', 'tidyverse'))" | R
 RUN echo "install.packages('cmdstanr', repos = c('https://mc-stan.org/r-packages/', getOption('repos')))" | R
 RUN echo "install.packages('BiocManager')"|R
 RUN echo "cmdstanr::install_cmdstan()" | R
